@@ -44,6 +44,11 @@ catkin build
 git clone https://github.com/MarcoMustacchi/UAV_Pick_and_Place.git
 ```
 
+##### Move stuff
+```bash
+mv UAV_Pick_and_Place/* ..
+```
+
 ##### Build the Packages
 ```bash
 catkin build 
