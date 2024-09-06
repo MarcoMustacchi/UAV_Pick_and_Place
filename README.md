@@ -13,7 +13,7 @@ Ubuntu 22.04 with ROS Noetic using [Terminator](https://gnome-terminator.org/) a
 
 ```bash
 mkdir -p ~/Desktop/catkin_ws/src
-cd ~/~/Desktop/catkin_ws/src
+cd ~/Desktop/catkin_ws/src
 catkin_init_workspace
 ```
 
@@ -30,7 +30,7 @@ cd ~/Desktop/catkin_ws/src
 
 ##### Clone repository
 ```bash
-git clone https://github.com/MarcoMustacchi/IntelligentRoboticsLabs.git
+git clone https://github.com/MarcoMustacchi/UAV_Pick_and_Place.git
 ```
 
 ##### Install packages dependencies "Apriltag" and "Apriltag_ros"
