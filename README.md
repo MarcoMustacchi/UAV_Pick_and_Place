@@ -54,9 +54,14 @@ mv UAV_Pick_and_Place/* .
 rm -rf UAV_Pick_and_Place
 ```
 
-##### Build the Packages
+##### Build the packages
 ```bash
-catkin build 
+catkin build aruco_detector link_attacher topic_recorder 
+```
+
+##### Build the remaining package "offb" (it depends on "aruco_detector" pkg and "link_attacher" pkg)
+```bash
+catkin build offb
 ```
 
 ## Preliminary Step
@@ -70,24 +75,30 @@ at the end of your **bashrc** file
 gedit ~/.bashrc
 ```
 
+### How to start simulation
+```bash
+roslaunch offb custom_mavros_posix_sitl.launch
+```
+```bash
+roslaunch offb nodes_simulation.launch
+```
 
-
-## Gazebo Models
-
-you can either define the full model directly in the world file
-
-or
-
-you cab create the model with model.sdf and model.config and then simply include the model in the world file
-
-
+#### If you want to record the simulation using rosbag
+```bash
+roslaunch offb custom_mavros_posix_sitl.launch
+```
+```bash
+roslaunch topic_recorder start_recording.launch
+```
+```bash
+roslaunch offb nodes_simulation.launch
+```
 
 #### Note:
 
 Gazebo uses the model's internal name to differentiate instances, and if two models have the same name, only one of them will be loaded.
 
 You can add a `<name>` tag to each instance of the `small_box` model in your world file to give them unique names. 
-
 
 
 ## Define Setpoint for mission
