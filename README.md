@@ -28,19 +28,10 @@ catkin build
 cd ~/Desktop/catkin_ws/src
 ```
 
-##### Clone repository
-```bash
-git clone https://github.com/MarcoMustacchi/UAV_Pick_and_Place.git
-```
-
-##### Install packages dependencies "Apriltag" and "Apriltag_ros"
+##### Install packages dependencies "gazebo_ros_link_attacher"
 
 ```bash
-git clone https://github.com/AprilRobotics/apriltag.git
-```
-
-```bash
-git clone https://github.com/AprilRobotics/apriltag_ros.git
+git clone https://github.com/pal-robotics/gazebo_ros_link_attacher.git
 ```
 
 ##### Navigate to catkin workspace
@@ -49,6 +40,26 @@ cd ~/Desktop/catkin_ws
 ```
 
 ##### Build the dependencies Packages
+```bash
+catkin build 
+```
+
+##### Navigate to catkin workspace
+```bash
+cd ~/Desktop/catkin_ws/src
+```
+
+##### Clone repository
+```bash
+git clone https://github.com/MarcoMustacchi/UAV_Pick_and_Place.git
+```
+
+##### Navigate to catkin workspace
+```bash
+cd ~/Desktop/catkin_ws
+```
+
+##### Build the Packages
 ```bash
 catkin build 
 ```
