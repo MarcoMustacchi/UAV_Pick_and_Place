@@ -36,7 +36,7 @@ git clone https://github.com/pal-robotics/gazebo_ros_link_attacher.git
 
 ##### Build the dependencies Packages
 ```bash
-catkin build 
+catkin build gazebo_ros_link_attacher
 ```
 
 ##### Clone repository
@@ -46,12 +46,12 @@ git clone https://github.com/MarcoMustacchi/UAV_Pick_and_Place.git
 
 ##### Move stuff
 ```bash
-mv UAV_Pick_and_Place/* ..
+mv UAV_Pick_and_Place/* .
 ```
 
-#### Remove directory
+#### Remove directory and all its content
 ```bash
-rmdir UAV_Pick_and_Place
+rm -rf UAV_Pick_and_Place
 ```
 
 ##### Build the Packages
