@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="simple_bin">
+    <!-- Static bin since it will not move -->
+    <static>true</static>
+
+    <!-- Bin bottom -->
+    <link name="bin_bottom">
+      <pose>0 0 0.01 0 0 0</pose> <!-- Slightly raised to avoid collision with the ground -->
+      <collision name="collision_bottom">
+        <geometry>
+          <box>
+            <size>0.4 0.4 0.02</size> <!-- 0.4m x 0.4m x 0.02m bottom -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_bottom">
+        <geometry>
+          <box>
+            <size>0.4 0.4 0.02</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Bin front wall -->
+    <link name="bin_front">
+      <pose>0 0.2 0 0 0 0</pose> <!-- Positioned forward, adjusted for no gap -->
+      <collision name="collision_front">
+        <geometry>
+          <box>
+            <size>0.4 0.04 0.1</size> <!-- 0.4m x 0.04m x 0.1m front wall -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_front">
+        <geometry>
+          <box>
+            <size>0.4 0.04 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Bin back wall -->
+    <link name="bin_back">
+      <pose>0 -0.2 0 0 0 0</pose> <!-- Positioned backward, adjusted for no gap -->
+      <collision name="collision_back">
+        <geometry>
+          <box>
+            <size>0.4 0.04 0.1</size> <!-- 0.4m x 0.04m x 0.1m back wall -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_back">
+        <geometry>
+          <box>
+            <size>0.4 0.04 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Bin left wall -->
+    <link name="bin_left">
+      <pose>-0.2 0 0 0 0 0</pose> <!-- Positioned left, adjusted for no gap -->
+      <collision name="collision_left">
+        <geometry>
+          <box>
+            <size>0.04 0.4 0.1</size> <!-- 0.04m x 0.4m x 0.1m left wall -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_left">
+        <geometry>
+          <box>
+            <size>0.04 0.4 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Bin right wall -->
+    <link name="bin_right">
+      <pose>0.2 0 0 0 0 0</pose> <!-- Positioned right, adjusted for no gap -->
+      <collision name="collision_right">
+        <geometry>
+          <box>
+            <size>0.04 0.4 0.1</size> <!-- 0.04m x 0.4m x 0.1m right wall -->
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual_right">
+        <geometry>
+          <box>
+            <size>0.04 0.4 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+
+  </model>
+</sdf>
+

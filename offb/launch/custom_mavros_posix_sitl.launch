@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Include the MAVROS node with SITL and Gazebo -->
+  <include file="$(find px4)/launch/mavros_posix_sitl.launch">
+    <arg name="vehicle" default="iris"/>
+    <arg name="sdf" value="$(find offb)/models/iris_camera_downward.sdf"/>
+    <!-- <arg name="sdf" value="$(find offb)/models/iris_camera_forward.sdf"/> -->
+    <!-- <arg name="sdf" value="$(find offb)/models/iris_lidar.sdf"/> -->
+    <!-- <arg name="sdf" value="$(find offb)/models/iris_camera_and_lidar.sdf"/> -->
+    <!-- <arg name="vehicle" default="iris_rplidar_with_camera"/> -->
+    <arg name="world" value="$(find offb)/worlds/custom_empty.world"/>
+  </include>
+
+</launch>
+

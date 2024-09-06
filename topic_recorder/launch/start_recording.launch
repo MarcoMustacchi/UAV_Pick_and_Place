@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	
+  <!-- Start Recording -->
+  <node pkg="topic_recorder" type="record_topics.py" name="record_topics" output="screen">
+    <param name="yaml_file" value="$(find topic_recorder)/config/topics.yaml"/>
+    <param name="output_directory" value="$(env HOME)/catkin_ws/src/topic_recorder/bags"/>
+    <param name="bag_file_name" value="my_simulation_data.bag"/>
+  </node>
+  
+</launch>

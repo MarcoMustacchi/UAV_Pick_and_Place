@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Launch offb_node_velocity_param from offb package -->
+  <node pkg="offb" type="offb_node_velocity_param" name="offb_node_velocity_param" output="screen">
+  </node>
+
+  <!-- Launch link_attacher_node from link_attacher package -->
+  <node pkg="link_attacher" type="link_attacher_node" name="link_attacher_node" output="screen">
+  </node>
+
+  <!-- Launch link_detacher_node from link_attacher package -->
+  <node pkg="link_attacher" type="link_detacher_node" name="link_detacher_node" output="screen">
+  </node>
+  
+  <!-- Launch aruco_detector_node from aruco_detector package -->
+  <node pkg="aruco_detector" type="aruco_detector_node" name="aruco_detector_node" output="screen">
+  </node>
+
+</launch>
+
+
+

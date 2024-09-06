@@ -1,0 +1,5 @@
+topics:
+  - /gazebo/model_states
+  - /mavros/actuator_control
+  - /mavros/imu/data
+  - /mavros/local_position/odom

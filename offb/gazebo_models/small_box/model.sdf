@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <!-- Define small box -->
+  <model name="small_box">
+    <link name="box_link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.05</size> <!-- Width, Depth, Height -->
+          </box>
+        </geometry>
+        <material>
+    	  <ambient>0.545 0.271 0.075 1.0</ambient> <!-- Brown color -->
+    	  <diffuse>0.545 0.271 0.075 1.0</diffuse> <!-- Brown color -->
+    	  <specular>0.2 0.1 0.05 1.0</specular>    <!-- Slightly lighter specular component -->
+    	  <emissive>0.0 0.0 0.0 1.0</emissive>     <!-- No emissive light -->
+	</material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass>0.05</mass> <!-- Adjust mass as needed -->
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+    </link>
+  </model>
+</sdf>
+

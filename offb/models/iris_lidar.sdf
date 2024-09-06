@@ -1,0 +1,76 @@
+<?xml version="1.0"?> 
+<sdf version="1.5">
+  <model name="iris_lidar">
+  
+    <!-- Include the original iris model -->
+    <include>
+      <uri>model://iris</uri>
+    </include>
+
+    <!-- Add the lidar sensor -->
+    <link name="hokuyo_link">
+      <pose>0 0 0 0 0 0</pose>
+      <collision name="collision">
+        <pose>0 0 0.2 0 0 0</pose> <!-- Change z value here to change lidar position in z-axis -->
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0.17 0 0 0</pose> <!-- Change z value here to change lidar position in z-axis -->
+        <geometry>
+          <mesh>
+            <uri>model://hokuyo/meshes/hokuyo.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <inertial>
+        <mass>0.016</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+
+      <sensor type="ray" name="laser">
+        <pose>0 0 0.2 0 0 1.57</pose> <!-- Change z value here to change lidar position in z-axis -->
+        <visualize>true</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1024</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.141593</min_angle>
+              <max_angle>3.141593</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>30</max>
+            <resolution>0.1</resolution>
+          </range>
+        </ray>
+        <plugin name="hokuyo_node" filename="libgazebo_ros_laser.so">
+          <robotNamespace></robotNamespace>
+          <topicName>/spur/laser/scan</topicName>
+          <frameName>/hokuyo_sensor_link</frameName>
+        </plugin>
+      </sensor>
+    </link>
+
+    <joint name="hokuyo_joint" type="fixed">
+      <pose>0 0 0 0 0 0</pose>
+      <parent>iris::base_link</parent> <!-- Ensure this matches exactly -->
+      <child>hokuyo_link</child>
+    </joint>
+    
+  </model>
+</sdf>
+

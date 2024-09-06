@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <!-- Define small box with ArUco marker -->
+  <model name="small_box_marker_4">
+    
+    <!-- Include the pre-existing small_box model -->
+    <include>
+      <uri>model://small_box</uri> <!-- Reference the ArUco marker model -->
+      <!-- Keep the small box at its default position without rotation -->
+      <pose>0 0 0 0 0 0</pose> <!-- Box position is relative to the model's origin -->
+    </include>
+    
+    <!-- Include the pre-existing ArUco marker model -->
+    <include>
+      <uri>model://aruco_marker_4</uri>
+      <!-- Apply rotation only to the marker -->
+      <pose>0 0 0.03 0 -1.5708 0</pose> <!-- Marker 3cm above box, with rotation -->
+    </include>
+
+    <!-- Optional: Joint to make the box and marker a single object -->
+    <joint name="fixed_joint" type="fixed">
+      <parent>small_box::box_link</parent>
+      <child>aruco_marker_5::link</child> <!-- Make sure the link name matches the ArUco model -->
+    </joint>
+
+  </model>
+</sdf>
+
