@@ -34,29 +34,14 @@ cd ~/Desktop/catkin_ws/src
 git clone https://github.com/pal-robotics/gazebo_ros_link_attacher.git
 ```
 
-##### Navigate to catkin workspace
-```bash
-cd ~/Desktop/catkin_ws
-```
-
 ##### Build the dependencies Packages
 ```bash
 catkin build 
 ```
 
-##### Navigate to catkin workspace
-```bash
-cd ~/Desktop/catkin_ws/src
-```
-
 ##### Clone repository
 ```bash
 git clone https://github.com/MarcoMustacchi/UAV_Pick_and_Place.git
-```
-
-##### Navigate to catkin workspace
-```bash
-cd ~/Desktop/catkin_ws
 ```
 
 ##### Build the Packages
