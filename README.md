@@ -49,6 +49,11 @@ git clone https://github.com/MarcoMustacchi/UAV_Pick_and_Place.git
 mv UAV_Pick_and_Place/* ..
 ```
 
+#### Remove directory
+```bash
+rmdir UAV_Pick_and_Place
+```
+
 ##### Build the Packages
 ```bash
 catkin build 
