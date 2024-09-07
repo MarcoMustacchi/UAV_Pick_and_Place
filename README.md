@@ -50,12 +50,12 @@ catkin build gazebo_ros_link_attacher
 git clone https://github.com/MarcoMustacchi/UAV_Pick_and_Place.git
 ```
 
-##### Move stuff
+##### Move the repository content in the current directory
 ```bash
 mv UAV_Pick_and_Place/* .
 ```
 
-#### Remove directory and all its content
+##### Remove directory and all its content
 ```bash
 rm -rf UAV_Pick_and_Place
 ```
@@ -108,11 +108,11 @@ rosparam set /uav_setpoint "{x: 3.0, y: 0.0, z: 2}"
 
 ## Note: Aruco Marker
 
-Using the following website to get the texture.svg 
+##### Using the following website to get the texture.svg 
 
-https://chev.me/arucogen/
+[[Terminator](https://chev.me/arucogen/)]([https://gnome-terminator.org/](https://chev.me/arucogen/))
 
-which then i need to convert as texture.png
+##### which then I need to convert as texture.png
 
 
 ## Note: Gazebo
@@ -132,13 +132,13 @@ Gazebo uses several default directories to search for models, which may not alwa
 3. **GAZEBO_MODEL_PATH**:
 - The `GAZEBO_MODEL_PATH` environment variable is typically used to extend Gazebo’s default search paths with additional directories, particularly for custom models or models that are not installed in the default locations.
 
-### Viewing All Active Model Paths
+#### Viewing All Active Model Paths
 ##### If you want to see all the directories Gazebo is searching for models, including the defaults, you can do the following:
 **In the Gazebo GUI**:
 - Open Gazebo.
 - Click on `Insert` in the left panel to see all available models. Hovering over or inspecting the models should show their respective paths.
 
-### **Finding the Current Gazebo Path**
+#### **Finding the Current Gazebo Path**
 You can check the current Gazebo paths by inspecting these environment variables:
 - **`GAZEBO_MODEL_PATH`**: This is where Gazebo looks for model files.
 - **`GAZEBO_RESOURCE_PATH`**: This is where Gazebo looks for world files, meshes, and other resources.
@@ -151,7 +151,7 @@ echo $GAZEBO_RESOURCE_PATH
 echo $GAZEBO_PLUGIN_PATH
 ```
 
-### **Temporarily changing the Gazebo Path**
+#### **Temporarily changing the Gazebo Path**
 ##### You can temporarily change the path by exporting the environment variable in your terminal session:
 ```bash
 export GAZEBO_MODEL_PATH=/your/custom/path:$GAZEBO_MODEL_PATH
