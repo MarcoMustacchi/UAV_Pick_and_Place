@@ -28,19 +28,10 @@ cd ~/Desktop/catkin_ws/
 catkin build
 ```
 
-##### Setting up a ROS package from Git
+##### Install and build package dependency "gazebo_ros_link_attacher"
 ```bash
 cd ~/Desktop/catkin_ws/src
-```
-
-##### Install packages dependencies "gazebo_ros_link_attacher"
-
-```bash
 git clone https://github.com/pal-robotics/gazebo_ros_link_attacher.git
-```
-
-##### Build the dependencies Packages
-```bash
 catkin build gazebo_ros_link_attacher
 ```
 
@@ -106,13 +97,9 @@ rosparam set /uav_setpoint "{x: 3.0, y: 0.0, z: 2}"
 ```
 
 ## Note: Aruco Marker
-
 ##### Using the following website to get the texture.svg 
-
 [https://chev.me/arucogen/](https://chev.me/arucogen/)
-
 ##### which then I need to convert as texture.png
-
 
 ## Note: Gazebo
 ### Understanding Gazebo Model Path
