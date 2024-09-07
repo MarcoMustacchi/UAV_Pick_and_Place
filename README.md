@@ -7,12 +7,16 @@
 ## Setup 
 Ubuntu 20.04 with ROS Noetic using [Terminator](https://gnome-terminator.org/) as shell
 
-## Installation
+## Table of contents
+- Installation
+- Notes: Aruco Marker
+- Notes: Gazebo
+- How to setup PX4 toolchain development environment
 
+## Installation
 Assuming you have Ubuntu 20.04 installed, ROS Noetic installed and PX4 development environment set
 
 ##### Create a ROS workspace
-
 ```bash
 mkdir -p ~/Desktop/catkin_ws/src
 cd ~/Desktop/catkin_ws/src
@@ -66,11 +70,12 @@ catkin build aruco_detector link_attacher topic_recorder
 catkin build offb
 ```
 
-## Preliminary Step
+### Preliminary Step
 Remember to add 
 ```bash
 source /opt/ros/noetic/setup.bash
 source ~/Desktop/catkin_ws/devel/setup.bash
+export GAZEBO_MODEL_PATH=~/Desktop/catkin_ws/src/offb/gazebo_models:$GAZEBO_MODEL_PATH
 ```
 at the end of your **bashrc** file
 ```bash
@@ -96,22 +101,12 @@ roslaunch topic_recorder start_recording.launch
 roslaunch offb nodes_simulation.launch
 ```
 
-#### Note:
-
-Gazebo uses the model's internal name to differentiate instances, and if two models have the same name, only one of them will be loaded.
-
-You can add a `<name>` tag to each instance of the `small_box` model in your world file to give them unique names. 
-
-
-## Define Setpoint for mission
-
+#### Define Setpoint for mission
 ```bash
 rosparam set /uav_setpoint "{x: 3.0, y: 0.0, z: 2}"
 ```
 
-
-
-## Aruco Marker
+## Note: Aruco Marker
 
 Using the following website to get the texture.svg 
 
@@ -120,18 +115,9 @@ https://chev.me/arucogen/
 which then i need to convert as texture.png
 
 
+## Note: Gazebo
 
-## Useful Linux commands
-
-Open the current path in the terminal
-
-```bash
-nautilus .
-```
-
-
-
-## Understanding Gazebo Model Path
+### Understanding Gazebo Model Path
 
 Gazebo uses several default directories to search for models, which may not always be explicitly listed in the `GAZEBO_MODEL_PATH` environment variable. Here’s why you see additional model paths in the Gazebo interface that aren't shown when you echo the `GAZEBO_MODEL_PATH`:
 
@@ -186,9 +172,13 @@ export GAZEBO_PLUGIN_PATH=/your/custom/plugin/path:$GAZEBO_PLUGIN_PATH
 
 To permanently change the path, add the export commands to your shell’s configuration file (`~/.bashrc`, `~/.bash_profile`, `~/.zshrc`, etc.), depending on which shell you use.
 
+### Understanding Gazebo models
+Gazebo uses the model's internal name to differentiate instances, and if two models have the same name, only one of them will be loaded.
 
-## How to setup PX4 toolchain development environment for drone simulations
+You can add a `<name>` tag to each instance of the `small_box` model in your world file to give them unique names. 
 
+
+## How to setup PX4 toolchain development environment
 ```bash
 sudo apt update
 sudo apt upgrade
@@ -200,23 +190,19 @@ cd Firmware
 bash ./Tools/setup/ubuntu.sh
 ```
 
-## reboot computer
-https://raw.githubusercontent.com/ktelegenov/scripts/main/ubuntu_sim_ros_noetic.sh
-bash ubuntu_sim_ros_noetic.sh
+#### reboot computer
 
-## close the terminal and open it again
+#### close the terminal and open it again
 ```bash
 cd src/Firmware
 git submodule update --init --recursive
 DONT_RUN=1 make px4_sitl_default gazebo
 ```
-
 ```bash
 source Tools/simulation/gazebo/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd):$(pwd)/Tools/simulation/gazebo/sitl_gazebo
 ```
-
-## Make sure to add the above inside the .bashrc file if you want to run it everytime from the terminal.\
+#### Make sure to add the above inside the .bashrc file if you want to run it everytime from the terminal.\
 The $pwd should be replaced with the path to Firmware folder.
 ```bash
 roslaunch px4 multi_uav_mavros_sitl.launch
