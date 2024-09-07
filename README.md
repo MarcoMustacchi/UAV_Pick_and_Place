@@ -1,8 +1,7 @@
+<h1 align="center">UAV Autonomous Navigation <br> Pick and Place</h1>
 <p align="center">
-  <img src="https://github.com/MarcoMustacchi/MarcoMustacchi.github.io/blob/main/assets/img/icons/UniPD_logo.svg" width="150">
+  <img src="https://github.com/MarcoMustacchi/UAV_Pick_and_Place/blob/master/UAV_Pick_Place.gif" width="300">
 </p>
-
-<h1 align="center">Computer Vision - Laboratory Activities <br> UniPd</h1>
 
 ## Setup 
 Ubuntu 20.04 with ROS Noetic using [Terminator](https://gnome-terminator.org/) as shell
@@ -110,16 +109,14 @@ rosparam set /uav_setpoint "{x: 3.0, y: 0.0, z: 2}"
 
 ##### Using the following website to get the texture.svg 
 
-[[Terminator](https://chev.me/arucogen/)]([https://gnome-terminator.org/](https://chev.me/arucogen/))
+[https://chev.me/arucogen/](https://chev.me/arucogen/)
 
 ##### which then I need to convert as texture.png
 
 
 ## Note: Gazebo
-
 ### Understanding Gazebo Model Path
-
-Gazebo uses several default directories to search for models, which may not always be explicitly listed in the `GAZEBO_MODEL_PATH` environment variable. Here’s why you see additional model paths in the Gazebo interface that aren't shown when you echo the `GAZEBO_MODEL_PATH`:
+##### Gazebo uses several default directories to search for models, which may not always be explicitly listed in the `GAZEBO_MODEL_PATH` environment variable. Here’s why you see additional model paths in the Gazebo interface that aren't shown when you echo the `GAZEBO_MODEL_PATH`:
 
 1. **Default Paths in Gazebo:**
 - **`~/.gazebo/models`**: This is the user's local model directory. Gazebo automatically checks this directory for models, even if it’s not included in the `GAZEBO_MODEL_PATH`.
@@ -139,7 +136,7 @@ Gazebo uses several default directories to search for models, which may not alwa
 - Click on `Insert` in the left panel to see all available models. Hovering over or inspecting the models should show their respective paths.
 
 #### **Finding the Current Gazebo Path**
-You can check the current Gazebo paths by inspecting these environment variables:
+##### You can check the current Gazebo paths by inspecting these environment variables:
 - **`GAZEBO_MODEL_PATH`**: This is where Gazebo looks for model files.
 - **`GAZEBO_RESOURCE_PATH`**: This is where Gazebo looks for world files, meshes, and other resources.
 - **`GAZEBO_PLUGIN_PATH`**: This is where Gazebo looks for plugins.
