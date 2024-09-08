@@ -14,9 +14,9 @@
       <uri>model://ground_plane</uri>
     </include>
     
-    <!-- Include small bin -->
+    <!-- Include simple bin -->
     <include>
-      <uri>model://small_bin</uri>
+      <uri>model://simple_bin</uri>
       <pose>0 -1 0 0 0 0</pose> <!-- X, Y, Z, Roll [rad], Pitch [rad], Yaw [rad]-->
     </include>
     
