@@ -8,6 +8,7 @@ Ubuntu 20.04 with ROS Noetic using [Terminator](https://gnome-terminator.org/) a
 
 ## Table of contents
 - Installation
+- Notes: Wind
 - Notes: Aruco Marker
 - Notes: Gazebo
 - How to setup PX4 toolchain development environment
@@ -96,12 +97,20 @@ roslaunch offb nodes_simulation.launch
 rosparam set /uav_setpoint "{x: 3.0, y: 0.0, z: 2}"
 ```
 
-## Note: Aruco Marker
+##### you can see the result of the simulation using rosbag file with Plotjuggler
+```bash
+rosrun plotjuggler plotjuggler
+```
+
+## Notes: Wind
+##### Added in .world file the wind from 30s to 35s in simulation time to test the PX4 controller
+
+## Notes: Aruco Marker
 ##### Using the following website to get the texture.svg 
 [https://chev.me/arucogen/](https://chev.me/arucogen/)
 ##### which then I need to convert as texture.png
 
-## Note: Gazebo
+## Notes: Gazebo
 ### Understanding Gazebo Model Path
 ##### Gazebo uses several default directories to search for models, which may not always be explicitly listed in the `GAZEBO_MODEL_PATH` environment variable. Here’s why you see additional model paths in the Gazebo interface that aren't shown when you echo the `GAZEBO_MODEL_PATH`:
 
