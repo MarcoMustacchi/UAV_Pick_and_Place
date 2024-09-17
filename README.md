@@ -1,6 +1,6 @@
 <h1 align="center">UAV Autonomous Navigation <br> Pick and Place</h1>
 <p align="center">
-  <img src="https://github.com/MarcoMustacchi/UAV_Pick_and_Place/blob/master/UAV_Pick_Place.gif" width="300">
+  <img src="https://github.com/MarcoMustacchi/UAV_Pick_and_Place/blob/master/VitaranaDrone.png" width="1440">
 </p>
 
 ## Setup 
